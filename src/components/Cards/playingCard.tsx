@@ -29,14 +29,14 @@ const rankObj = {
     A: 'Ace',
 };
 
-const Card: React.FC<Props> = ({ rank, suit }) => {
+const PlayingCard: React.FC<Props> = ({ rank, suit }) => {
 
     const rankDisplay = rankObj[rank];
     const suitDisplay = suitObj[suit];
 
     return (
         <div>
-            <span className={`card rank-${rank} ${suit}`}>
+            <span className={`card rank-${rank} ${suit} imgCard`}>
                 <span className="rank">{rankDisplay}</span>
                 <span className="suit">{suitDisplay}</span>
             </span>
@@ -44,4 +44,4 @@ const Card: React.FC<Props> = ({ rank, suit }) => {
     );
 }
 
-export default Card;
+export default PlayingCard;

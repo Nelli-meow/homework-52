@@ -1,22 +1,32 @@
+import React, { useState } from 'react';
 import './App.css';
-import Card from './components/Cards/card.tsx';
+import PlayingCard from './components/Cards/playingCard.tsx';
 import CardDeck from "./lib/CardDeck.ts";
 
 
 const App = () => {
+    const [hand, setHand] = useState<PlayingCard[]>([]);
 
-  const cardDeck = new CardDeck();
-  const cards = cardDeck.getCards(5);
+    const getCards = () => {
+        const cardDeck = new CardDeck();
+        const cards = cardDeck.getCards(5);
 
-  console.log(cardDeck.deck);
+        setHand(cards);
+    };
 
-  return (
-      <div>
-        {cards.map((oneCard) => (
-            <Card key={`${oneCard.rank} ${oneCard.suit}`} rank={oneCard.rank} suit={oneCard.suit} />
-        ))}
-      </div>
-  )
+    return (
+        <div>
+            <button onClick={getCards} className="cardBtn">Раздать карты</button>
+
+            {hand.length > 0 ? (
+                <div className="playingCards faceImages cards">
+                    {hand.map((card) => (
+                        <PlayingCard rank={card.rank} suit={card.suit} />
+                    ))}
+                </div>
+            ): null }
+        </div>
+    );
 };
 
 export default App

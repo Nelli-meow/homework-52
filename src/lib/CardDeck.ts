@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './Card.ts';
 
 class CardDeck {
     deck: Card[];
@@ -7,7 +7,7 @@ class CardDeck {
         this.deck = [];
 
         const suits = ['hearts', 'diams', 'clubs', 'spades'];
-        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'A'];
 
         suits.forEach(suit => {
             ranks.forEach(rank => {
@@ -24,7 +24,7 @@ class CardDeck {
     getCards(howMany: number): Card[] {
         const cards: Card[] = [];
 
-        for (let i: number = 0; i < howMany; i++) {
+        for (let i = 0; i < howMany; i++) {
             cards.push(this.getCard());
         }
         return cards;

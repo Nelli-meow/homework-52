@@ -323,7 +323,8 @@
 .playingCards.faceImages .card.rank-k,
 .playingCards.faceImages .card.joker {
   background-repeat: no-repeat;
-  background-position: -1em 0;
+  background-size: contain;
+  background-position: center;
   /* @change: smaller Cards: more negative distance from the left
      bigger Cards: 0 or more positive distance from the left */
 
@@ -356,6 +357,7 @@
 .playingCards.simpleCards .card.rank-j,
 .playingCards.simpleCards .card.rank-q,
 .playingCards.simpleCards .card.rank-k       { background-image: none !important; }
+
 
 /*____________ symbols in the middle (faces as dingbat symbols) ____________*/
 

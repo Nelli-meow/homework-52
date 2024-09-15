@@ -4,3 +4,19 @@
   padding: 2rem;
   text-align: center;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.cardBtn {
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid deeppink;
+  border-radius: 6px;
+  cursor: pointer;
+}

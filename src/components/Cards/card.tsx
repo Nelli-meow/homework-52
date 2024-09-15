@@ -1,8 +1,9 @@
 import * as React from "react";
 
 interface Props {
-    rank: keyof typeof rankObj,
-    suit: keyof typeof suitObj
+    rank: string,
+    suit: string,
+    key?: string,
 }
 
 const suitObj = {
@@ -13,28 +14,31 @@ const suitObj = {
 }
 
 const rankObj = {
-    two: '2',
-    three: '3',
-    four: '4',
-    five: '5',
-    six: '6',
-    seven: '7',
-    eight: '8',
-    nine: '9',
-    ten: '10',
+    '2': '2',
+    '3': '3',
+    '4': '4',
+    '5': '5',
+    '6': '6',
+    '7': '7',
+    '8': '8',
+    '9': '9',
+    '10': '10',
     J: 'Jack',
     Q: 'Queen',
     K: 'King',
-    A: 'Ace'
-}
+    A: 'Ace',
+};
 
 const Card: React.FC<Props> = ({ rank, suit }) => {
+
+    const rankDisplay = rankObj[rank];
+    const suitDisplay = suitObj[suit];
 
     return (
         <div>
             <span className={`card rank-${rank} ${suit}`}>
-                <span className="rank">{rankObj[rank]}</span>
-                <span className="suit">{suitObj[suit]}</span>
+                <span className="rank">{rankDisplay}</span>
+                <span className="suit">{suitDisplay}</span>
             </span>
         </div>
     );
